@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+  <persistence-unit name="part1DIO">
+    <!--provider>org.hibernate.ejb.HibernatePersistenceProvider</provider-->
+      <description>Unidade persistence da parte 1 do tutorial basico do jpa</description>
+      
+      <!--Classes que serão mapeadas -->
+      <class>classes.Aluno</class>
+      <class>classes.Estado</class>
+      
+      <!--Configuração com o Banco de dados-->
+    <properties>
+        
+      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/digital_innovation_one"/>
+      <property name="javax.persistence.jdbc.user" value="root"/>
+      <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+      <property name="javax.persistence.jdbc.password" value="password"/>
+      <!--property name="hibernate.cache.provider_class" value="org.hibernate.cache.NoCacheProvider"/-->
+      <!--property name="javax.persistence.schema-generation.database.action" value="create"/-->
+    </properties>
+  </persistence-unit>
+  
+  
+  <persistence-unit name="Digital">
+    
+      <description>Unidade persistence da parte 2 do tutorial basico do jpa</description>
+      
+      <!--Implementacao do JPA -->
+      <provider>org.hibernate.jb.HibernatePersistenceProvider</provider>
+      <!--Classes que serão mapeadas -->
+      <class>classes.Aluno</class>
+      <class>classes.Estado</class>
+      
+      <!--Configuração com o Banco de dados-->
+    <properties>
+        
+      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/digital_innovation_one"/>
+      <property name="javax.persistence.jdbc.user" value="root"/>
+      <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+      <property name="javax.persistence.jdbc.password" value="password"/>
+      <!--property name="hibernate.cache.provider_class" value="org.hibernate.cache.NoCacheProvider"/-->
+      <!--property name="javax.persistence.schema-generation.database.action" value="create"/-->
+      
+      <!--Configuração Hibernate (Parametros só serao reconhecidos se estiver usando a implementação do HIBERNATE) -->
+      <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL8Dialect"/>
+      <property name="hibernate.show_sql" value="true"/>
+      <property name="hibernate.format_sql" value="true"/>
+      <property name="hibernate.hbm2dll.auto" value="create"/> <!--Possible Values  a implementation for hibernate.hbm2dll.auto  are: validate, update,  create, create-drop  -->
+    </properties>
+  </persistence-unit>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+</persistence>
